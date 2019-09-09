@@ -57,9 +57,8 @@ class Header extends React.Component{
                 menuType?'':
                 <Row className="breadcrumb">
                 <Col span={4} className="breadcrumb-title">
-                {/* {console.log(this.props)} */}
+                {console.log(this.props)}
                 {this.props.menuName||''}
-                    {store.getState()}
                 </Col>
                 <Col span={20} className="weather">
                     <span className="systime">{this.state.time}</span>

@@ -11,22 +11,8 @@ ul,li{
         visibility: hidden;
     }
 }
-.container{
-    .nav-left{
-        background-color:#001529;
-        color: #ffffff;
-        height: calc(100vh);
-    }
-    .main{
-        height: calc(100vh);
-        background-color: @colorL;
-        overflow: auto;
-    }
-    .content{
-        position: relative;
-        padding: 20px;
-    }
-}
+
+
 
 .content-wrap{
     background: #ffffff;
@@ -41,4 +27,59 @@ ul,li{
     button{
         margin-right: 10px;
     }
+}
+
+// 页头样式
+.ant-layout-header {
+    height: 64px;
+    padding: 0;
+    line-height: 64px;
+    background: #fff;
+}
+
+// 控制显示隐藏
+.dlineb{
+    display: inline-block
+}
+
+.dn{
+    display: none
+}
+
+//内容区域的下移
+.ant-layout-content{
+    margin-top: 55px!important
+}
+
+//侧边栏logo样式
+.logo{
+    line-height: 60px;
+    text-align: left;
+    font-size: 18px;
+    background-color: #002140;
+    img{
+        height: 40px;
+        vertical-align: middle;
+    }
+    span{
+        margin-left: 5px;
+        color:#ddd
+    }
+}
+
+//侧边栏trigger样式调整
+.ant-layout-sider-trigger {
+    position: relative;
+    top: -100%;
+    left: 100%;
+    z-index: 1;
+    width: 40px!important;
+    height: 40px;
+    color: #fff;
+    line-height: 48px;
+    text-align: center;
+    background: #002140;
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }

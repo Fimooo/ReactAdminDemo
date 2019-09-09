@@ -56,6 +56,11 @@ export default class Axios{
         }
         return new Promise((resolve,reject)=>{
             axios({
+                headers:{
+                    common:{
+                        Authorization:'Token'
+                    }
+                },
                 url:options.url,
                 method:'get',
                 baseURL:basicUrl,

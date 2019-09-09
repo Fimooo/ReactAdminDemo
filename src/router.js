@@ -38,7 +38,6 @@ export default class IRouter extends React.Component {
                                <Route path="/common/order/detail/:orderId" component={OrderDetail} />
                            </Common>
                             } />
-
                        <Route path="/" render={() =>
                            <Admin>
                            <Switch>
@@ -67,14 +66,7 @@ export default class IRouter extends React.Component {
                                </Switch>
                            </Admin>
                        } />
-
-
-
-                      
-
                     </Switch>
-                       
-                   
                 </App>
             </HashRouter>
         )

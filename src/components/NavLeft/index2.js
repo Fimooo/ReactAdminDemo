@@ -1,23 +1,18 @@
 import React from 'react'
 import MenuConfig from './../../config/menuConfig'
+import './index.less'
 import { NavLink } from 'react-router-dom'
+import { Menu, Icon, Button } from 'antd';
 import { connect } from 'react-redux'
 import { switchMenu } from './../../redux/action'
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import './index.less'
-
-const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-
 class NavLeft extends React.Component {
     state={
         currentKey:'',
-        collapsed: false,
     }
     componentWillMount(){
         const menuTreeNode = this.renderMenu(MenuConfig)
-        let currentKey = [window.location.hash.replace(/#|\?.+$/g,'')]
-        console.log(currentKey)
+        let currentKey = window.location.hash.replace(/#|\?.+$/g,'')
         this.setState({
             currentKey,
             menuTreeNode
@@ -36,44 +31,47 @@ class NavLeft extends React.Component {
         // })
         // dispatch会触发reducer，接受到状态后，返回新的状态
         this.setState({
-            currentKey:[key]
+            currentKey:key
         })
     }
-
-
-// 菜单渲染
-renderMenu = (data)=>{
-    return data.map((item)=>{
-        if(item.children){
-        let navName = <div><Icon type={item.icon} /><span>{item.title}</span></div>
-            return (
-                <SubMenu title={navName} key={item.key}>
-                    {this.renderMenu(item.children)}
-                </SubMenu>
-            )
-        }
-        return <Menu.Item title={item.title} key={item.key}>
-            <NavLink to={item.key}> <Icon type={item.icon?item.icon:null} /><span>{item.title}</span></NavLink>
-        </Menu.Item>
-    })
-}
-  render() {
-    return (
-         <div>
-          <Menu
-                // mode控制菜单的展示方式
-                mode="inline"
+    // 菜单渲染
+    renderMenu = (data)=>{
+        return data.map((item)=>{
+            if(item.children){
+                return (
+                    <SubMenu title={item.title} key={item.key}>
+                        {this.renderMenu(item.children)}
+                    </SubMenu>
+                )
+            }
+            return <Menu.Item title={item.title} key={item.key}>
+                <NavLink to={item.key}>{item.title}</NavLink>
+            </Menu.Item>
+        })
+    }
+    render() {
+        return (<div>
+            <Menu
                 onClick={this.handleClick}
                 theme="dark"
                 selectedKeys={this.state.currentKey}
             >
+             <div className="logo">
+                <img src="/assets/logo192.png" alt="" />
+                <h1>Fimo的</h1>
+            </div>
                 {this.state.menuTreeNode}
-            </Menu></div>
-    );
-  }
+            </Menu>
+        </div>)
+    }
 }
 
+// 对应方法1：
+// export default connect(null,{switchMenu})(NavLeft)
+// 对应方法2：
 export default connect()(NavLeft)
 
 
-//伸缩左侧栏
+
+
+//不伸缩左侧栏
