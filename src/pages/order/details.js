@@ -25,12 +25,25 @@ export default class City extends React.Component{
                 this.setState({
                     orderInfo:res.result
                 })
+                this.renderMap()
             }else{
                 this.setState({
                     err:res.msg
                 })
             }
         })
+    }
+    renderMap = ()=>{
+        this.map = new window.BMap.Map('orderDetailMap')
+        this.map.centerAndZoom('北京',11)
+        this.addMapControl()
+    }
+
+    addMapControl = ()=>{
+        let map = this.map
+        map.addControl(new window.BMap.ScaleControl({anchor:window.BMAP_ANCOR_TOP_RIGHT}))
+        map.addControl(new window.BMap.NavigationControl({anchor:window.BMAP_ANCOR_TOP_RIGHT}))
+
     }
 
     render(){

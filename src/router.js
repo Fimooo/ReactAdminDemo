@@ -26,6 +26,10 @@ import Tree from './pages/table/tree'
 import User from './pages/user'
 import Rich from './pages/rich'
 import Permission from './pages/permission'
+import Line from './pages/echarts/line'
+import Pie from './pages/echarts/pie'
+import Bar from './pages/echarts/bar'
+
 export default class IRouter extends React.Component {
     render() {
         return (
@@ -49,7 +53,10 @@ export default class IRouter extends React.Component {
                                <Route path="/ui/messages" component={Message} />
                                <Route path="/ui/tabs" component={Tab} />                                
                                <Route path="/ui/gallery" component={Gallery} />   
-                               <Route path="/ui/carousel" component={Carousel} />   
+                               <Route path="/ui/carousel" component={Carousel} />  
+                               <Route path="/charts/pie" component={Pie} />
+                               <Route path="/charts/bar" component={Bar} />  
+                               <Route path="/charts/line" component={Line} />  
                                <Route path="/form/login" component={FormLogin} />   
                                <Route path="/form/reg" component={Register} />   
                                <Route path="/table/basic" component={Basic} />  

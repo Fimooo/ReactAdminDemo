@@ -33,7 +33,7 @@ class BaseForm extends React.Component{
                         }
                     </FormItem>;
                     formListItem.push(begin_time)
-                    const end_time = <FormItem label="~" colon={false} key={field}>
+                    const end_time = <FormItem label="~" colon={false} key={field+'end'}>
                         {
                             getFieldDecorator('end_time')(
                                 <DatePicker showTime={true} placeholder={placeholder} format="YYYY-MM-DD HH:mm:ss" />
