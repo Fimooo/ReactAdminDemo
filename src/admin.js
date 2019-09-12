@@ -17,22 +17,6 @@ export default class Admin extends React.Component {
     }
     render() {
         return (
-            // <Row className="container">
-            //     <Col span={4} className="nav-left">
-
-            //     </Col>
-            //     <Col span={20} className="main">
-            //         <Header></Header>
-            //         <Row className="content">
-            //         {this.props.children}
-            //            {/* <Home>
-            //                 {this.props.children}
-            //            </Home> */}
-            //         </Row>
-            //         <Footers></Footers>
-            //     </Col>
-            // </Row>
-
             <Layout style={{ minHeight: '100vh' }}>
                 <Sider 
                 collapsible 
@@ -46,7 +30,6 @@ export default class Admin extends React.Component {
                         ></Icon>
                     </div>
                 }
-                
                 >
                     <div className="logo">
                         <img src="/assets/logo192.png" alt="" />
@@ -62,22 +45,13 @@ export default class Admin extends React.Component {
                         {this.props.children}
                         {/* <Home>
                             {this.props.children}
-                       </Home> */}          </Content>
+                       </Home> */}          
+                    </Content>
                     <Footer style={{ textAlign: 'center' }}>
                         <Footers></Footers>
-
                     </Footer>
                 </Layout>
             </Layout>
         )
-    }
-}
-
-class Trigger extends React.Component{
-
-    render(){
-        return <div>
-           <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}></Icon>
-        </div>
     }
 }
