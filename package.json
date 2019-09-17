@@ -90,9 +90,17 @@
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "no-unused-vars": "off",
+      "no-array-constructor": "off",
+      "eqeqeq": "off",
+      "no-redeclare": "off",
+      "jsx-a11y/anchor-is-valid": "off",
+      "array-callback-return": "off"
+    }
   },
-  "proxy":"http://localhost:4000",
+  "proxy": "http://localhost:4000",
   "browserslist": {
     "production": [
       ">0.2%",

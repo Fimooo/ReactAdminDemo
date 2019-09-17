@@ -26,8 +26,10 @@ import Tree from './pages/table/tree'
 import User from './pages/user'
 import Rich from './pages/rich'
 import Permission from './pages/permission'
+import RegisterModal from './pages/form/registerModal'
 import Line from './pages/echarts/line'
 import Pie from './pages/echarts/pie'
+import TreeNode from './pages/tree'
 import Bar from './pages/echarts/bar'
 import {connect} from 'react-redux'
 const mapStateToProps = (state) => {
@@ -79,11 +81,13 @@ export default connect(mapStateToProps)(class IRouter extends React.Component {
                                 <Route path="/charts/line" component={Line}/>
                                 <Route path="/form/login" component={FormLogin}/>
                                 <Route path="/form/reg" component={Register}/>
+                                <Route path="/form/regModal" component={RegisterModal}/>
                                 <Route path="/table/basic" component={Basic}/>
                                 <Route path="/table/tree" component={Tree}/>
                                 <Route path="/table/high" component={High}/>
                                 <Route path="/city" component={City}/>
                                 <Route path="/order" component={Order}/>
+                                <Route path="/tree" component={TreeNode}/>
                                 <Route path="/preview" component={Preview}/>
                                 <Route path="/user" component={User}/>
                                 <Route path="/rich" component={Rich}/>

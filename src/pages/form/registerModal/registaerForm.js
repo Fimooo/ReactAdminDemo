@@ -66,20 +66,8 @@ class FormRegister extends React.Component {
         previewVisible: false,
         previewImage: '',
     }
-    handleSubmit = ()=>{
-        let userInfo = this.props.form.getFieldsValue();
-        console.log(JSON.stringify(userInfo))
-        this.props.form.validateFields((err,values)=>{
-            if(!err){
-                message.success(`${userInfo.userName} 恭喜你，您通过本次表单组件学习，当前密码为：${userInfo.userPwd}`)
-            }else{
-                console.log(err)
-            }
-        })
-
-    }
-    handleReset = () => {
-        this.props.form.resetFields();
+    handleFilters = ()=>{
+        return this.props.form.getFieldsValue();
     }
     getBase64 = (file) => {
         return new Promise((resolve, reject) => {
@@ -423,10 +411,6 @@ class FormRegister extends React.Component {
                     <Modal visible={this.state.previewVisible} footer={null} onCancel={this.handleCancel}>
                         <img alt="example" style={{ width: '100%' }} src={this.state.previewImage} />
                     </Modal>
-                    <FormItem {...offsetLayout}>
-                        <Button type="primary" onClick={this.handleSubmit}>注册</Button>
-                        <Button type="primary" onClick={this.handleReset}>重置</Button>
-                    </FormItem>
                 </Form>
             </Card>
         </div>)

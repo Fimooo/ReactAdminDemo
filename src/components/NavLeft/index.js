@@ -44,8 +44,8 @@ class NavLeft extends React.Component {
 // 菜单渲染
 renderMenu = (data)=>{
     return data.map((item)=>{
-        if(item.children){
-        let navName = <div><Icon type={item.icon} /><span>{item.title}</span></div>
+        if (item.children) {
+            let navName = <div>{item.icon?<Icon type={item.icon} />:null}<span>{item.title}</span></div>
             return (
                 <SubMenu title={navName} key={item.key}>
                     {this.renderMenu(item.children)}
@@ -53,7 +53,7 @@ renderMenu = (data)=>{
             )
         }
         return <Menu.Item title={item.title} key={item.key}>
-            <NavLink to={item.key}> <Icon type={item.icon?item.icon:null} /><span>{item.title}</span></NavLink>
+            <NavLink to={item.key}>{item.icon?<Icon type={item.icon} />:null}<span>{item.title}</span></NavLink>
         </Menu.Item>
     })
 }

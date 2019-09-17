@@ -65,6 +65,11 @@ const menuList = [
                 title:'注册',
                 key:'/form/reg',
                 icon:'double-righ'
+            },
+            {
+                title:'注册弹框',
+                key:'/form/regModal',
+                icon:'double-righ'
             }
         ]
     },
@@ -94,6 +99,11 @@ const menuList = [
                 icon:'double-righ'
             }
         ]
+    },
+    {
+        title:'树结构',
+        key:'/tree',
+        icon:'eye'
     },
     {
         title:'富文本',
